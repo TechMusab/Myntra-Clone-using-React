@@ -1,9 +1,18 @@
-const Bagsummary = () => {
+const Bagsummary = ({items}) => {
+  const CONVENIENCE_FEES = 99;
+  let totalMRP = 0;
+  let totalDiscount = 0;
+  items.forEach(bagItem => {
+    totalMRP += bagItem.original_price;
+    totalDiscount += bagItem.original_price - bagItem.current_price;
+  });
+
+  let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
   const Bagsummary = {
-    totalItem: 6,
-    totalMRP: 0,
-    totalDiscount: 0,
-    finalPayment: 0,
+    totalItem: items.length,
+    totalMRP: totalMRP,
+    totalDiscount: totalDiscount,
+    finalPayment: finalPayment,
   };
   return (
     <div className="bag-summary">

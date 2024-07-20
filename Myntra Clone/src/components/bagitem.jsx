@@ -1,4 +1,11 @@
+import { useDispatch } from "react-redux";
+import { Bagitemsactions } from "../store/bagitemsslice";
+
 const Bagitem = ({ item }) => {
+const dispatch=useDispatch();
+const handledelete=(id)=>{
+    dispatch(Bagitemsactions.removeitem(id));
+}
     return (
         <div className="bag-item-container">
             <div className="item-left-part">
@@ -19,7 +26,7 @@ const Bagitem = ({ item }) => {
                     Delivery by <span className="delivery-details-days">{item.delivery_date}</span>
                 </div>
             </div>
-            <div className="remove-from-cart"> X</div>
+            <div onClick={()=>handledelete(item.id)} className="remove-from-cart"> X</div>
         </div>
     );
 }

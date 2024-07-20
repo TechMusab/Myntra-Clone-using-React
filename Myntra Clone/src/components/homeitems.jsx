@@ -1,4 +1,10 @@
+import { useDispatch } from "react-redux";
+import { Bagitemsactions } from "../store/bagitemsslice";
 const Homeitems=({item})=>{
+    const dispatch=useDispatch();
+    const handleadd=(id)=>{
+dispatch(Bagitemsactions.additem(id));
+    }
     return(
         <div className="item-container">
         <img className="item-image" src={item.image} alt="item image" />
@@ -12,7 +18,7 @@ const Homeitems=({item})=>{
             <span className="original-price">Rs {item.original_price}</span>
             <span className="discount">({item.discount_percentage}% OFF)</span>
         </div>
-        <button className="btn-add-bag" onClick={()=>{console.log("clicked")}}>Add to Bag</button>
+        <button className="btn-add-bag" onClick={()=>handleadd(item.id)}>Add to Bag</button>
       </div>
     );
 
