@@ -1,12 +1,15 @@
 import {  createSlice } from "@reduxjs/toolkit";
- import {items} from "../data/items";
 const getitemsslice = createSlice({
   name: "items",
-  initialState: items,
-  reducers: {
-
-  }
+  initialState: [],
+    reducers: {
+      addInitialItems: (state, action) => {
+        console.log(action.payload);
+        return action.payload;
+      }
+    }
 });
 export default getitemsslice;
+export const itemsactions = getitemsslice.actions;
 
 

@@ -8,26 +8,20 @@ const Bagsummary = ({items}) => {
   });
 
   let finalPayment = totalMRP - totalDiscount + CONVENIENCE_FEES;
-  const Bagsummary = {
-    totalItem: items.length,
-    totalMRP: totalMRP,
-    totalDiscount: totalDiscount,
-    finalPayment: finalPayment,
-  };
   return (
     <div className="bag-summary">
       <div className="bag-details-container">
         <div className="price-header">
-          PRICE DETAILS ({Bagsummary.totalItem} Items){" "}
+          PRICE DETAILS ({items.length} Items){" "}
         </div>
         <div className="price-item">
           <span className="price-item-tag">Total MRP</span>
-          <span className="price-item-value">₹{Bagsummary.totalMRP}</span>
+          <span className="price-item-value">₹{totalMRP}</span>
         </div>
         <div className="price-item">
           <span className="price-item-tag">Discount on MRP</span>
           <span className="price-item-value priceDetail-base-discount">
-            -₹{Bagsummary.totalDiscount}
+            -₹{totalDiscount}
           </span>
         </div>
         <div className="price-item">
@@ -37,7 +31,7 @@ const Bagsummary = ({items}) => {
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹{Bagsummary.finalPayment}</span>
+          <span className="price-item-value">₹{finalPayment}</span>
         </div>
       </div>
       <button className="btn-place-order">

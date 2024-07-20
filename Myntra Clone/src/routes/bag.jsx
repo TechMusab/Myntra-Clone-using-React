@@ -18,7 +18,7 @@ const Bag = () => {
       <main>
         <div className="bag-page">
           <div className="bag-items-container">
-          {newarray.map((item)=><Bagitem key={item.id} item={item}></Bagitem>)}
+          {newarray.length===0?<div>Your Bag is Empty</div>:newarray.map((item)=><Bagitem key={item.id} item={item}></Bagitem>)}
           </div>
           <Bagsummary items={newarray}></Bagsummary>
         </div>
