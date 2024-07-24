@@ -35,7 +35,7 @@ Contributions are welcome! If you have suggestions for improvements or additiona
 
 ## Contact
 
-For any questions or inquiries, please contact me at [mbulancers@gmail.com](mailto:mbulancers@gmail.com).
+For any questions or inquiries, please contact me at mbulancers@gmail.com.
 
 ---
 
